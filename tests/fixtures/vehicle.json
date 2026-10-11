@@ -1,0 +1,79 @@
+{
+  "vehicle": {
+    "vin": "TMBJB9NY5RF999999",
+    "name": "Elroq",
+    "licensePlate": "ABC 123",
+    "renderUrl": "https://example.com/render.png",
+    "status": {
+      "overall": {
+        "doorsLocked": "YES",
+        "locked": "YES",
+        "doors": "CLOSED",
+        "windows": "CLOSED",
+        "lights": "OFF",
+        "reliableLockStatus": "LOCKED"
+      },
+      "detail": {
+        "sunroof": "UNSUPPORTED",
+        "trunk": "CLOSED",
+        "bonnet": "CLOSED"
+      },
+      "carCapturedTimestamp": "2026-10-10T18:09:00Z"
+    },
+    "odometer": {
+      "mileageInKm": 4321,
+      "carCapturedTimestamp": "2026-10-10T18:09:00Z"
+    },
+    "parkingPosition": {
+      "state": "PARKED",
+      "gpsCoordinates": { "latitude": 57.87, "longitude": 11.97 },
+      "formattedAddress": "Example Street 1, 44200 Kungälv, Sweden"
+    },
+    "airConditioning": {
+      "state": "OFF",
+      "targetTemperature": { "value": 21.5, "unit": "CELSIUS" },
+      "airConditioningWithoutExternalPower": true,
+      "airConditioningAtUnlock": false,
+      "carCapturedTimestamp": "2026-10-10T18:09:00Z"
+    },
+    "charging": {
+      "isVehicleInSavedLocation": true,
+      "status": {
+        "chargingRateInKilometersPerHour": 0,
+        "chargePowerInKw": 0,
+        "remainingTimeToFullyChargedInMinutes": 0,
+        "state": "CONSERVING",
+        "chargeType": "OFF",
+        "plugConnectionState": "CONNECTED",
+        "plugLockState": "LOCKED",
+        "battery": {
+          "remainingCruisingRangeInMeters": 312000,
+          "stateOfChargeInPercent": 81
+        }
+      },
+      "settings": {
+        "targetStateOfChargeInPercent": 80,
+        "batteryCareModeTargetValueInPercent": 80,
+        "preferredChargeMode": "MANUAL",
+        "availableChargeModes": ["MANUAL", "TIMER", "PREFERRED_CHARGING_TIMES", "SOMETHING_NEW"],
+        "chargingCareMode": "ACTIVATED",
+        "autoUnlockPlugWhenCharged": "OFF",
+        "maxChargeCurrentAc": "MAXIMUM",
+        "maxChargeCurrentAcAmpere": 16
+      },
+      "carCapturedTimestamp": "2026-10-10T18:09:31Z"
+    },
+    "operations": [
+      { "name": "startCharging" },
+      { "name": "stopCharging" },
+      { "name": "setChargingLimit" },
+      { "name": "setChargeMode" },
+      { "name": "updateChargingProfile" },
+      { "name": "startAirConditioning" },
+      { "name": "stopAirConditioning" }
+    ]
+  },
+  "errors": [
+    { "type": "RENDER_UNAVAILABLE", "description": "Render could not be retrieved." }
+  ]
+}

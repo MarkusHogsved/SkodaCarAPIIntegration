@@ -1,0 +1,58 @@
+start_air_conditioning:
+  fields:
+    device_id:
+      required: true
+      selector:
+        device:
+          integration: skoda_car_api
+    temperature:
+      selector:
+        number:
+          min: 16
+          max: 30
+          step: 0.5
+          unit_of_measurement: °C
+    without_external_power:
+      selector:
+        boolean:
+
+start_auxiliary_heating:
+  fields:
+    device_id:
+      required: true
+      selector:
+        device:
+          integration: skoda_car_api
+    spin:
+      required: true
+      selector:
+        text:
+          type: password
+    temperature:
+      selector:
+        number:
+          min: 16
+          max: 30
+          step: 0.5
+          unit_of_measurement: °C
+    duration:
+      selector:
+        number:
+          min: 1
+          max: 60
+          unit_of_measurement: min
+    start_mode:
+      selector:
+        select:
+          translation_key: start_mode
+          options:
+            - heating
+            - ventilation
+
+stop_auxiliary_heating:
+  fields:
+    device_id:
+      required: true
+      selector:
+        device:
+          integration: skoda_car_api
