@@ -1,3 +1,5 @@
+<img src="custom_components/skoda_car_api/brand/icon.png" alt="" width="96" align="right">
+
 # Skoda Car API
 
 Home Assistant integration for the official [MyŠkoda Public API](https://public.api.connect.skoda-auto.cz/docs).
@@ -84,6 +86,10 @@ logger:
   logs:
     custom_components.skoda_car_api: debug
 ```
+
+## Releases
+
+Versions follow the `version` in `manifest.json`. Pushing a tag such as `v0.1.2` creates the GitHub release that HACS offers as an update.
 
 ## Disclaimer
 
