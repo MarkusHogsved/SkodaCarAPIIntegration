@@ -89,7 +89,7 @@ logger:
 
 ## Releases
 
-Versions follow the `version` in `manifest.json`. Pushing a tag such as `v0.1.2` creates the GitHub release that HACS offers as an update.
+Bumping `version` in `manifest.json` on `main` creates a matching GitHub release (for example `v0.1.2`), which HACS offers as an update. A version with a suffix such as `0.2.0-beta.1` becomes a pre-release.
 
 ## Disclaimer
 
