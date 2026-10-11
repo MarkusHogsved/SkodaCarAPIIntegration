@@ -225,3 +225,23 @@ async def test_unload(
     await _setup(hass, config_entry)
     assert await hass.config_entries.async_unload(config_entry.entry_id)
     assert config_entry.state is ConfigEntryState.NOT_LOADED
+
+
+async def test_charging_details_when_not_charging(
+    hass: HomeAssistant,
+    config_entry: MockConfigEntry,
+    aioclient_mock: AiohttpClientMocker,
+    vehicle_payload: dict[str, Any],
+) -> None:
+    """No finish time unless charging; current setting falls back to the enum."""
+    settings = vehicle_payload["vehicle"]["charging"]["settings"]
+    del settings["maxChargeCurrentAcAmpere"]
+    vehicle_payload["vehicle"]["charging"]["status"]["fullyChargedAt"] = (
+        "2026-10-10T18:09:31Z"
+    )
+    aioclient_mock.get(VEHICLE_URL, json=vehicle_payload, headers=rate_headers())
+    await _setup(hass, config_entry)
+
+    assert hass.states.get("sensor.elroq_fully_charged_at").state == "unknown"
+    assert hass.states.get("sensor.elroq_max_ac_charging_current") is None
+    assert hass.states.get("sensor.elroq_ac_charging_current").state == "maximum"

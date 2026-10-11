@@ -159,7 +159,12 @@ SENSORS: tuple[SkodaSensorDescription, ...] = (
         key="fully_charged_at",
         translation_key="fully_charged_at",
         device_class=SensorDeviceClass.TIMESTAMP,
-        value_fn=lambda c: _ts(c.data.get("charging", "status", "fullyChargedAt")),
+        # Only meaningful while charging; otherwise the API echoes the capture time
+        value_fn=lambda c: (
+            _ts(c.data.get("charging", "status", "fullyChargedAt"))
+            if c.data.get("charging", "status", "state") == "CHARGING"
+            else None
+        ),
         exists_fn=_has("charging"),
     ),
     SkodaSensorDescription(
@@ -171,7 +176,23 @@ SENSORS: tuple[SkodaSensorDescription, ...] = (
         value_fn=lambda c: _num(
             c.data.get("charging", "settings", "maxChargeCurrentAcAmpere")
         ),
-        exists_fn=_has("charging"),
+        exists_fn=lambda d: (
+            d.get("charging", "settings", "maxChargeCurrentAcAmpere") is not None
+        ),
+    ),
+    SkodaSensorDescription(
+        key="ac_charging_current",
+        translation_key="ac_charging_current",
+        device_class=SensorDeviceClass.ENUM,
+        options=["maximum", "reduced"],
+        entity_category=EntityCategory.DIAGNOSTIC,
+        value_fn=lambda c: _enum(
+            c.data.get("charging", "settings", "maxChargeCurrentAc"),
+            ["maximum", "reduced"],
+        ),
+        exists_fn=lambda d: (
+            d.get("charging", "settings", "maxChargeCurrentAc") is not None
+        ),
     ),
     SkodaSensorDescription(
         key="charging_updated_at",

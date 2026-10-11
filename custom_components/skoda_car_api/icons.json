@@ -1,49 +1,110 @@
 {
   "entity": {
     "binary_sensor": {
-      "at_saved_location": { "default": "mdi:home-lightning-bolt-outline" }
+      "at_saved_location": {
+        "default": "mdi:home-lightning-bolt-outline"
+      }
     },
     "button": {
-      "refresh": { "default": "mdi:refresh" }
+      "refresh": {
+        "default": "mdi:refresh"
+      }
     },
     "device_tracker": {
-      "parking_position": { "default": "mdi:car-brake-parking" }
+      "parking_position": {
+        "default": "mdi:car-brake-parking"
+      }
     },
     "number": {
-      "charging_limit": { "default": "mdi:battery-charging-80" },
-      "climate_temperature": { "default": "mdi:thermometer-auto" }
+      "charging_limit": {
+        "default": "mdi:battery-charging-80"
+      },
+      "climate_temperature": {
+        "default": "mdi:thermometer-auto"
+      }
     },
     "select": {
-      "charge_mode": { "default": "mdi:ev-station" }
+      "charge_mode": {
+        "default": "mdi:ev-station"
+      }
     },
     "sensor": {
-      "electric_range": { "default": "mdi:map-marker-distance" },
-      "charging_power": { "default": "mdi:lightning-bolt" },
-      "charging_rate": { "default": "mdi:speedometer" },
-      "charging_state": { "default": "mdi:ev-station" },
-      "charge_type": { "default": "mdi:ev-plug-type2" },
-      "remaining_charging_time": { "default": "mdi:timer-outline" },
-      "fully_charged_at": { "default": "mdi:battery-clock" },
-      "charging_updated_at": { "default": "mdi:clock-check-outline" },
-      "fuel_level": { "default": "mdi:gas-station" },
-      "total_range": { "default": "mdi:map-marker-distance" },
-      "adblue_range": { "default": "mdi:water" },
-      "odometer": { "default": "mdi:counter" },
-      "air_conditioning_state": { "default": "mdi:fan" },
-      "air_conditioning_ready_at": { "default": "mdi:clock-outline" },
-      "api_key_expires": { "default": "mdi:key-chain-variant" },
-      "api_requests_remaining": { "default": "mdi:api" },
-      "next_update": { "default": "mdi:update" }
+      "electric_range": {
+        "default": "mdi:map-marker-distance"
+      },
+      "charging_power": {
+        "default": "mdi:lightning-bolt"
+      },
+      "charging_rate": {
+        "default": "mdi:speedometer"
+      },
+      "charging_state": {
+        "default": "mdi:ev-station"
+      },
+      "charge_type": {
+        "default": "mdi:ev-plug-type2"
+      },
+      "remaining_charging_time": {
+        "default": "mdi:timer-outline"
+      },
+      "fully_charged_at": {
+        "default": "mdi:battery-clock"
+      },
+      "charging_updated_at": {
+        "default": "mdi:clock-check-outline"
+      },
+      "fuel_level": {
+        "default": "mdi:gas-station"
+      },
+      "total_range": {
+        "default": "mdi:map-marker-distance"
+      },
+      "adblue_range": {
+        "default": "mdi:water"
+      },
+      "odometer": {
+        "default": "mdi:counter"
+      },
+      "air_conditioning_state": {
+        "default": "mdi:fan"
+      },
+      "air_conditioning_ready_at": {
+        "default": "mdi:clock-outline"
+      },
+      "api_key_expires": {
+        "default": "mdi:key-chain-variant"
+      },
+      "api_requests_remaining": {
+        "default": "mdi:api"
+      },
+      "next_update": {
+        "default": "mdi:update"
+      },
+      "ac_charging_current": {
+        "default": "mdi:current-ac"
+      }
     },
     "switch": {
-      "charging": { "default": "mdi:ev-station" },
-      "air_conditioning": { "default": "mdi:fan" },
-      "active_ventilation": { "default": "mdi:air-filter" }
+      "charging": {
+        "default": "mdi:ev-station"
+      },
+      "air_conditioning": {
+        "default": "mdi:fan"
+      },
+      "active_ventilation": {
+        "default": "mdi:air-filter"
+      }
     }
   },
   "services": {
-    "start_air_conditioning": { "service": "mdi:fan" },
-    "start_auxiliary_heating": { "service": "mdi:radiator" },
-    "stop_auxiliary_heating": { "service": "mdi:radiator-off" }
+    "start_air_conditioning": {
+      "service": "mdi:fan"
+    },
+    "start_auxiliary_heating": {
+      "service": "mdi:radiator"
+    },
+    "stop_auxiliary_heating": {
+      "service": "mdi:radiator-off"
+    }
   }
 }
